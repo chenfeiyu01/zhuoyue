@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+   <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body ng-app="app" ng-controller="ctrl">
+  <div class="header">
+    <div class="header_top">
+      <div class="wrap ovh">
+        <form action="http://beststudy.net/search.jspx" target="_blank" id="searchForm" onsubmit="return checkInput();">
+          <div class="search fr ml20">
+            <input type="text" placeholder="资讯搜索" class="search_text" name="q" id="txtSearch">
+            <input type="submit" class="icon search_bont" value="">
+          </div>
+        </form>
+        <a href="javascript:void(0);" class="header_top_a" onclick="AddFavorite(window.location, document.title);">添加收藏</a>
+        <a ui-sref="home" class="header_top_a">卓越教育网</a>
+      </div>
+    </div>
+    <div class="header_bom">
+      <div class="ns_b bgBlue1">
+        <div class="wrap">
+          <img src="img/logo.png" class="fl">
+          <div class="nav fr">
+            <a ui-sref="home" class="nav_a nav_a_f nav_a_cur">首页</a>
+            <div class="nav_a">
+              <a ui-sref="aboutUs" class="db aWhite">关于我们</a>
+              <ul class="nav_a_ul">
+                <li class="nav_a_li"><a ui-sref="aboutUs.jianjie" class="db aWhite">企业简介</a></li>
+                <li class="nav_a_li"><a ui-sref="aboutUs.wenhua" class="db aWhite">企业文化</a></li>
+                <li class="nav_a_li"><a ui-sref="aboutUs.licheng" class="db aWhite">发展历程</a></li>
+                <li class="nav_a_li"><a href="http://www.hotjob.cn/wt/ZY/web/index" class="db aWhite">加入卓越</a></li>
+              </ul>
+
+            </div>
+            <div class="nav_a">
+                  <a ui-sref="news" class="db aWhite">新闻中心</a>
+              <ul class="nav_a_ul">
+                <li class="nav_a_li"><a ui-sref="news.dongtai" class="db aWhite">卓越动态</a></li>
+                <li class="nav_a_li"><a ui-sref="news.baodao" class="db aWhite">媒体报导</a></li>
+                <li class="nav_a_li"><a ui-sref="news.zixun" class="db aWhite">教育资讯</a></li>
+                <li class="nav_a_li"><a ui-sref="news.rongyu" class="db aWhite">企业荣誉</a></li>
+                <li class="nav_a_li"><a ui-sref="news.zhaobiao" class="db aWhite">招标公告</a></li>
+              </ul>
+
+            </div>
+            <div class="nav_a">
+              <a ui-sref="work" class="db aWhite">业务体系</a>
+              <ul class="nav_a_ul">
+                <li class="nav_a_li"><a ui-sref="work.fudaoban" class="db aWhite">辅导班</a></li>
+                <li class="nav_a_li"><a ui-sref="work.yiduiyi" class="db aWhite">一对一</a></li>
+                <li class="nav_a_li"><a ui-sref="work.sunenglei" class="db aWhite">素能类产品</a></li>
+                <li class="nav_a_li"><a ui-sref="work.quanrizhi" class="db aWhite">全日制</a></li>
+                <li class="nav_a_li"><a ui-sref="work.youxiaoxianjie" class="db aWhite">幼小衔接</a></li>
+              </ul>
+
+            </div>
+            <div class="nav_a">
+              <a ui-sref="cost" class="db aWhite">战略投资</a>
+              <ul class="nav_a_ul">
+                <li class="nav_a_li"><a ui-sref="cost.afanti" class="db aWhite">阿凡题</a></li>
+                <li class="nav_a_li"><a ui-sref="cost.xieke" class="db aWhite">蟹壳兵团</a></li>
+                <li class="nav_a_li"><a ui-sref="cost.niushi" class="db aWhite">牛师帮</a></li>
+                <li class="nav_a_li"><a ui-sref="cost.fengbei" class="db aWhite">蜂背</a></li>
+                <li class="nav_a_li"><a ui-sref="cost.donghu" class="db aWhite">东湖棋院</a></li>
+                <li class="nav_a_li"><a ui-sref="cost.hezuo" class="db aWhite">投资合作</a></li>
+              </ul>
+
+            </div>
+            <div class="nav_a nav_a_b">
+              <a ui-sref="duty" class="db aWhite">社会责任</a>
+              <ul class="nav_a_ul">
+                <li class="nav_a_li"><a ui-sref="duty.CEO" class="db aWhite">CEO寄语</a></li>
+                <li class="nav_a_li"><a ui-sref="duty.gongyi" class="db aWhite">公益事业</a></li>
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="ad">
+        <ul class="ad_ul" style="width: 100%;">
+          <li class="ad_li" style="background: url('img/18103738wav8.jpg') center center / cover no-repeat; width: 100%;">
+            <a href="http://www.zy.com/" class="db hp280"></a>
+          </li>
+
+
+        </ul>
+        <div class="jt_l" style="display: none;"></div>
+        <div class="jt_r" style="display: none;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div ui-view id="ui-view">
+
+  </div>
+
+
+  <div class="footer">
+      <div class="wrap">
+          <p>
+              <a href="http://beststudy.net/contact/index.jhtml" class="footer_a">联系我们</a>
+              <a href="http://beststudy.net/friendlinks/index.jhtml" class="footer_a">友情链接</a>
+              <a href="http://beststudy.net/law/index.jhtml" class="footer_a">法律声明</a>
+              <a href="http://beststudy.net/guestbook.jspx" class="footer_a">意见建议</a>
+              <a href="http://beststudy.net/xqjs/index.jhtml" class="footer_a bdrn">校区建设</a>
+          </p>
+          <p class="mt10">Copyright © 广州卓越教育培训中心版权所有 1997-2016. All rights reserved. <a href="http://www.miitbeian.gov.cn/" target="_blank" style=" color: #ffffff">粤ICP备08132733号-6</a></p>
+      </div>
+  </div>
+</body>
+<script src="js/angular-1.4.6.min.js" charset="utf-8"></script>
+<script src="js/angular-ui-router.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var app=angular.module("app",["ui.router"]);
+  app.controller("ctrl",function($scope){
+
+  })
+  app.config(["$stateProvider","$urlRouterProvider",function($stateProvider,$urlRouterProvider){
+    $stateProvider
+    .state("home",{
+      url:"/home",
+      templateUrl:"home.html"
+    })
+    .state("aboutUs",{
+      url:"/aboutUs",
+      templateUrl:"aboutUs.html",
+      redirectTo:"aboutUs.jianjie"
+    })
+    .state("aboutUs.jianjie",{
+      url:"/jianjie",
+      templateUrl:"jianjie.html"
+    })
+    .state("aboutUs.wenhua",{
+      url:"/wenhua",
+      templateUrl:"wenhua.html"
+    })
+    .state("aboutUs.licheng",{
+      url:"/licheng",
+      templateUrl:"licheng.html"
+    })
+    .state("news",{
+      url:"/news",
+      templateUrl:"news.html",
+      redirectTo:"news.dongtai"
+    })
+    .state("news.dongtai",{
+      url:"/dongtai",
+      templateUrl:"dongtai.html"
+    })
+    .state("news.baodao",{
+      url:"/baodao",
+      templateUrl:"baodao.html"
+    })
+    .state("news.zixun",{
+      url:"/zixun",
+      templateUrl:"zixun.html"
+    })
+    .state("news.rongyu",{
+      url:"/rongyu",
+      templateUrl:"rongyu.html"
+    })
+    .state("news.zhaobiao",{
+      url:"/zhaobiao",
+      templateUrl:"zhaobiao.html"
+    })
+    .state("work",{
+      url:"/work",
+      templateUrl:"work.html",
+      redirectTo:"work.fudaoban"
+    })
+    .state("work.fudaoban",{
+      url:"/fudaoban",
+      templateUrl:"fudaoban.html"
+    })
+    .state("work.yiduiyi",{
+      url:"/yiduiyi",
+      templateUrl:"yiduiyi.html"
+    })
+    .state("work.sunenglei",{
+      url:"/sunenglei",
+      templateUrl:"sunenglei.html"
+    })
+    .state("work.quanrizhi",{
+      url:"/quanrizhi",
+      templateUrl:"quanrizhi.html"
+    })
+    .state("work.youxiaoxianjie",{
+      url:"/youxiaoxianjie",
+      templateUrl:"youxiaoxianjie.html"
+    })
+    .state("cost",{
+      url:"/cost",
+      templateUrl:"cost.html",
+      redirectTo:"cost.afanti"
+    })
+    .state("cost.afanti",{
+      url:"/afanti",
+      templateUrl:"afanti.html"
+    })
+    .state("cost.xieke",{
+      url:"/xieke",
+      templateUrl:"xieke.html"
+    })
+    .state("cost.niushi",{
+      url:"/niushi",
+      templateUrl:"niushibang.html"
+    })
+    .state("cost.fengbei",{
+      url:"/fengbei",
+      templateUrl:"fengbei.html"
+    })
+    .state("cost.donghu",{
+      url:"/donghu",
+      templateUrl:"donghu.html"
+    })
+    .state("cost.hezuo",{
+      url:"/hezuo",
+      templateUrl:"hezuo.html"
+    })
+    .state("duty",{
+      url:"/duty",
+      templateUrl:"duty.html",
+      redirectTo:"duty.CEO"
+    })
+    .state("duty.CEO",{
+      url:"/CEO",
+      templateUrl:"CEO.html"
+    })
+    .state("duty.gongyi",{
+      url:"/gongyi",
+      templateUrl:"gongyi.html"
+    })
+
+    $urlRouterProvider.otherwise("/home")
+  }])
+</script>
+</html>
